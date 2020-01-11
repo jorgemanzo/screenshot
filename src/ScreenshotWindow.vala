@@ -101,18 +101,17 @@ namespace Screenshot {
             take_btn.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             take_btn.can_default = true;
 
-            var icon_button = new Gtk.ToggleButton ();
-            icon_button.image = new Gtk.Image.from_icon_name ("tools-timer-symbolic", Gtk.IconSize.MENU);
-            icon_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            var delay_menu_btn = new Gtk.MenuButton ();
+            delay_menu_btn.image = new Gtk.Image.from_icon_name ("tools-timer-symbolic", Gtk.IconSize.MENU);
+            delay_menu_btn.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
-            var delay_options = new Screenshot.Widgets.DelaysList (icon_button);
-            delay_options.position = Gtk.PositionType.TOP;
+            var delay_options = new Screenshot.Widgets.DelaysList ();
             delay_options.delay_changed.connect ((_delay) => {
                 delay = _delay;
-                icon_button.set_active(false);
+                delay_menu_btn.set_active(false);
+                
             });
-            
-            icon_button.toggled.connect (() => delay_options.show_all ());
+            delay_menu_btn.popup = delay_options;
 
             this.set_default (take_btn);
 
@@ -120,7 +119,7 @@ namespace Screenshot {
 
             var actions_grid = new Gtk.Grid ();
             actions_grid.add (take_btn);
-            actions_grid.add (icon_button);
+            actions_grid.add (delay_menu_btn);
             actions_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
 
             var actions = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
