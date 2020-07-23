@@ -1,7 +1,7 @@
 project(
     'io.elementary.screenshot-tool', 'vala', 'c',
-    meson_version : '>= 0.43',
-    version: '1.7.0'
+    meson_version : '>= 0.46',
+    version: '1.7.1'
 )
 
 gnome = import('gnome')
@@ -19,17 +19,19 @@ executable(
     meson.project_name(),
     icon_res,
     'src/Application.vala',
+    'src/CaptureType.vala',
+    'src/ScreenshotBackend.vala',
+    'src/ScreenshotProxy.vala',
     'src/ScreenshotWindow.vala',
-    'src/Widgets/SelectionArea.vala',
-    'src/Widgets/DelaysList.vala',
     'src/Widgets/SaveDialog.vala',
     dependencies: [
         dependency('gdk-pixbuf-2.0'),
         dependency('glib-2.0'),
         dependency('gobject-2.0'),
         dependency('gtk+-3.0'),
-        dependency('granite', version: '>=5.0'),
-        dependency('libcanberra')
+        dependency('granite', version: '>=5.4.0'),
+        dependency('libcanberra'),
+        meson.get_compiler('vala').find_library('posix'),
     ],
     install : true
 )

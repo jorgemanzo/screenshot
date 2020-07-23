@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-30 09:23-0700\n"
-"PO-Revision-Date: 2019-11-08 14:24+0000\n"
+"POT-Creation-Date: 2020-06-29 07:03+0000\n"
+"PO-Revision-Date: 2020-01-25 14:08+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/screenshot-tool/"
 "extra/mr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:44+0000\n"
 
 #: data/io.elementary.screenshot-tool.appdata.xml.in:8
@@ -34,83 +34,88 @@ msgstr ""
 "आणि टाइम शॉट कॅप्चर करा."
 
 #: data/io.elementary.screenshot-tool.appdata.xml.in:30
-msgid "Close when pressing the Escape key"
-msgstr "एस्केप की दाबल्यावर बंद करा"
+msgid "Fix minor visual issues with selection items"
+msgstr "निवड आयटमसंबंधीत किरकोळ व्हिज्युअल समस्यांचे निराकरण करा"
 
 #: data/io.elementary.screenshot-tool.appdata.xml.in:31
 #: data/io.elementary.screenshot-tool.appdata.xml.in:39
-#: data/io.elementary.screenshot-tool.appdata.xml.in:48
-#: data/io.elementary.screenshot-tool.appdata.xml.in:58
-#: data/io.elementary.screenshot-tool.appdata.xml.in:68
-#: data/io.elementary.screenshot-tool.appdata.xml.in:78
-#: data/io.elementary.screenshot-tool.appdata.xml.in:93
-#: data/io.elementary.screenshot-tool.appdata.xml.in:102
+#: data/io.elementary.screenshot-tool.appdata.xml.in:47
+#: data/io.elementary.screenshot-tool.appdata.xml.in:56
+#: data/io.elementary.screenshot-tool.appdata.xml.in:66
+#: data/io.elementary.screenshot-tool.appdata.xml.in:76
+#: data/io.elementary.screenshot-tool.appdata.xml.in:86
+#: data/io.elementary.screenshot-tool.appdata.xml.in:101
+#: data/io.elementary.screenshot-tool.appdata.xml.in:110
 msgid "Translation updates"
 msgstr "भाषांतर अपडेट्स"
 
 #: data/io.elementary.screenshot-tool.appdata.xml.in:38
+msgid "Close when pressing the Escape key"
+msgstr "एस्केप की दाबल्यावर बंद करा"
+
+#: data/io.elementary.screenshot-tool.appdata.xml.in:46
 msgid ""
 "Revert from redacted font as soon as possible to avoid getting stuck in some "
 "situations"
 msgstr "काही परिस्थितीत अडकणे टाळण्यासाठी शक्य तितक्या लवकर रेडकेटेड फॉन्टवर परत जा"
 
-#: data/io.elementary.screenshot-tool.appdata.xml.in:46
+#: data/io.elementary.screenshot-tool.appdata.xml.in:54
 msgid "Always respect delay setting"
 msgstr "विलंब सेटिंगचा नेहमी आदर करा"
 
-#: data/io.elementary.screenshot-tool.appdata.xml.in:47
+#: data/io.elementary.screenshot-tool.appdata.xml.in:55
 msgid "Increase minimum timeout to 300"
 msgstr "किमान कालबाह्यता 300 पर्यंत वाढवा"
 
-#: data/io.elementary.screenshot-tool.appdata.xml.in:55
+#: data/io.elementary.screenshot-tool.appdata.xml.in:63
 msgid "Fix Alt+F4 key behavior"
 msgstr "Alt + F4 की वर्तन निराकरण करा"
 
-#: data/io.elementary.screenshot-tool.appdata.xml.in:56
+#: data/io.elementary.screenshot-tool.appdata.xml.in:64
 msgid "Icons now represent the capture area options"
 msgstr "आयकॉन्स आता कॅप्चर क्षेत्र पर्याय प्रस्तुत करतात"
 
-#: data/io.elementary.screenshot-tool.appdata.xml.in:57
-#: data/io.elementary.screenshot-tool.appdata.xml.in:67
-#: data/io.elementary.screenshot-tool.appdata.xml.in:77
+#: data/io.elementary.screenshot-tool.appdata.xml.in:65
+#: data/io.elementary.screenshot-tool.appdata.xml.in:75
 #: data/io.elementary.screenshot-tool.appdata.xml.in:85
-#: data/io.elementary.screenshot-tool.appdata.xml.in:94
-#: data/io.elementary.screenshot-tool.appdata.xml.in:103
-#: data/io.elementary.screenshot-tool.appdata.xml.in:110
+#: data/io.elementary.screenshot-tool.appdata.xml.in:93
+#: data/io.elementary.screenshot-tool.appdata.xml.in:102
+#: data/io.elementary.screenshot-tool.appdata.xml.in:111
+#: data/io.elementary.screenshot-tool.appdata.xml.in:118
 msgid "Minor bug fixes"
 msgstr "किरकोळ दोष निराकरणे"
 
-#: data/io.elementary.screenshot-tool.appdata.xml.in:65
+#: data/io.elementary.screenshot-tool.appdata.xml.in:73
 msgid "Fix ESC key behavior"
 msgstr "ESC की वर्तन निश्चित करा"
 
-#: data/io.elementary.screenshot-tool.appdata.xml.in:66
+#: data/io.elementary.screenshot-tool.appdata.xml.in:74
 msgid "Append scaling factor to filename"
 msgstr "फाईलनाव मध्ये स्केलिंग घटक जोडा"
 
-#: data/io.elementary.screenshot-tool.appdata.xml.in:75
+#: data/io.elementary.screenshot-tool.appdata.xml.in:83
 msgid "New default folder to save screenshots"
 msgstr "स्क्रीनशॉट जतन करण्यासाठी नवीन डीफॉल्ट फोल्डर"
 
-#: data/io.elementary.screenshot-tool.appdata.xml.in:76
+#: data/io.elementary.screenshot-tool.appdata.xml.in:84
 msgid "Remember main window position for reappearing window"
 msgstr "विंडो पुन्हा दिसण्यासाठी मुख्य विंडो स्थान लक्षात ठेवा"
 
-#: data/io.elementary.screenshot-tool.appdata.xml.in:92
+#: data/io.elementary.screenshot-tool.appdata.xml.in:100
 msgid "Play shutter sound when a screenshot is taken"
 msgstr "जेव्हा स्क्रीनशॉट घेतला जातो तेव्हा शटर ध्वनी प्ले करा"
 
-#: data/io.elementary.screenshot-tool.appdata.xml.in:101
+#: data/io.elementary.screenshot-tool.appdata.xml.in:109
 msgid "Fix extra black area on HiDPI screenshots"
 msgstr "हायडीपीआय स्क्रीनशॉटवर अतिरिक्त काळा क्षेत्र निश्चित करा"
 
-#: data/io.elementary.screenshot-tool.appdata.xml.in:144
+#: data/io.elementary.screenshot-tool.appdata.xml.in:152
 msgid "elementary LLC."
 msgstr "एलिमेंटरी LLC."
 
 #: data/io.elementary.screenshot-tool.desktop.in:7
-msgid "accessories-screenshot"
-msgstr "accessories-screenshot"
+msgid "io.elementary.screenshot-tool"
+msgstr ""
 
 #: data/io.elementary.screenshot-tool.desktop.in:10
 msgid "Snapshot;Screenshot;"
@@ -127,3 +132,6 @@ msgstr "वर्तमान विंडोचा स्क्रीनशॉ�
 #: data/io.elementary.screenshot-tool.desktop.in:22
 msgid "Screenshot of a Selected Area"
 msgstr "निवडलेल्या क्षेत्राचा स्क्रीनशॉट"
+
+#~ msgid "accessories-screenshot"
+#~ msgstr "accessories-screenshot"
