@@ -24,7 +24,7 @@ namespace Screenshot.Widgets {
         public DelaysList () {}
 
         construct {
-            var now_sec = get_timer_button(0);
+            var now_sec = get_timer_button (0);
             var three_sec = get_timer_button (3);
             var five_sec = get_timer_button (5);
             var ten_sec = get_timer_button (10);
@@ -53,4 +53,3 @@ namespace Screenshot.Widgets {
         }
     }
 }
-

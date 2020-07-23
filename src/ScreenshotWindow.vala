@@ -216,7 +216,7 @@ public class Screenshot.ScreenshotWindow : Gtk.ApplicationWindow {
 
         delay_options.delay_changed.connect ((_delay) => {
             delay = _delay;
-            delay_menu_btn.set_active(false);
+            delay_menu_btn.set_active (false);
             settings.set_int ("delay", delay);
         });
 
