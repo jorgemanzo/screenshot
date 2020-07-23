@@ -118,16 +118,24 @@ public class Screenshot.ScreenshotWindow : Gtk.ApplicationWindow {
             redact_switch.no_show_all = true;
         }
 
-        var delay_label = new Gtk.Label (_("Delay in seconds:"));
-        delay_label.halign = Gtk.Align.END;
-
-        var delay_spin = new Gtk.SpinButton.with_range (0, 15, 1);
-
         var take_btn = new Gtk.Button.with_label (_("Take Screenshot"));
         take_btn.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         take_btn.can_default = true;
 
         this.set_default (take_btn);
+
+        var delay_menu_btn = new Gtk.MenuButton ();
+        delay_menu_btn.image = new Gtk.Image.from_icon_name ("tools-timer-symbolic", Gtk.IconSize.MENU);
+        delay_menu_btn.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+
+        var delay_options = new Screenshot.Widgets.DelaysList ();
+        delay_menu_btn.popup = delay_options;
+
+        var take_btn_with_delay_menu = new Gtk.Grid ();
+        take_btn_with_delay_menu.add (take_btn);
+        take_btn_with_delay_menu.add (delay_menu_btn);
+        take_btn_with_delay_menu.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+
 
         var close_btn = new Gtk.Button.with_label (_("Close"));
 
@@ -136,7 +144,7 @@ public class Screenshot.ScreenshotWindow : Gtk.ApplicationWindow {
         actions.margin_top = 24;
         actions.spacing = 6;
         actions.add (close_btn);
-        actions.add (take_btn);
+        actions.add (take_btn_with_delay_menu);
 
         var grid = new Gtk.Grid ();
         grid.margin = 6;
@@ -149,8 +157,6 @@ public class Screenshot.ScreenshotWindow : Gtk.ApplicationWindow {
         grid.attach (close_switch, 1, 5, 1, 1);
         grid.attach (redact_label, 0, 6, 1, 1);
         grid.attach (redact_switch, 1, 6, 1, 1);
-        grid.attach (delay_label, 0, 7, 1, 1);
-        grid.attach (delay_spin, 1, 7, 1, 1);
         grid.attach (actions, 0, 8, 2, 1);
 
         var titlebar = new Gtk.HeaderBar ();
@@ -169,7 +175,6 @@ public class Screenshot.ScreenshotWindow : Gtk.ApplicationWindow {
         settings.bind ("mouse-pointer", this, "mouse-pointer", GLib.SettingsBindFlags.DEFAULT);
         settings.bind ("close-on-save", close_switch, "active", GLib.SettingsBindFlags.DEFAULT);
         settings.bind ("close-on-save", this, "close-on-save", GLib.SettingsBindFlags.DEFAULT);
-        settings.bind ("delay", delay_spin, "value", GLib.SettingsBindFlags.DEFAULT);
         settings.bind ("redact", redact_switch, "active", GLib.SettingsBindFlags.DEFAULT);
         settings.bind ("redact", this, "redact", GLib.SettingsBindFlags.DEFAULT);
 
@@ -207,10 +212,13 @@ public class Screenshot.ScreenshotWindow : Gtk.ApplicationWindow {
             present ();
         });
 
-        delay_spin.value_changed.connect (() => {
-            delay = delay_spin.get_value_as_int ();
+        delay = settings.get_int ("delay");
+
+        delay_options.delay_changed.connect ((_delay) => {
+            delay = _delay;
+            delay_menu_btn.set_active(false);
+            settings.set_int ("delay", delay);
         });
-        delay = delay_spin.get_value_as_int ();
 
         take_btn.clicked.connect (take_clicked);
         close_btn.clicked.connect (() => {
